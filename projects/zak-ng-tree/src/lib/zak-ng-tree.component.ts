@@ -1,10 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {
-  faPlus, faTrash, faPencilAlt, faToggleOn,
-  faCaretDown, faCaretRight, faCheck, faSortUp, 
-  faSortDown, faSort, faArrowUp, faArrowDown, faLevelUpAlt, faThumbsDown
-} from '@fortawesome/free-solid-svg-icons';
-
 export interface OptionType {
   enableAddDelete?: boolean,
   enableMove?: boolean,
@@ -33,20 +27,6 @@ export class ZakNgTreeComponent implements OnInit {
   @Input() items?: any;
   @Input() options: OptionType = this.defOptions;
   @Output() onChange: EventEmitter<object> = new EventEmitter();
-
-  faPlus = faPlus;
-  faTrash = faTrash;
-  faPencilAlt = faPencilAlt;
-  faToggleOn = faToggleOn;
-  faCaretDown = faCaretDown;
-  faCaretRight = faCaretRight;
-  faCheck = faCheck;
-  faSortUp = faSortUp;
-  faSortDown = faSortDown;
-  faSort = faSort;
-  faArrowUp = faArrowUp;
-  faArrowDown = faArrowDown;
-  faLevelUpAlt = faLevelUpAlt;
 
   enableEdit = false;
   enableEditIndex = null;
