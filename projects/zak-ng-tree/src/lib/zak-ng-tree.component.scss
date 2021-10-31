@@ -1,0 +1,67 @@
+.zak-ng-tree-container {
+    margin: 5px;
+    .zak-ng-tree-btn {
+        cursor: pointer;
+        color: #fff;
+        margin: 2px;
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+    }
+    .toggle-hide ul {
+        display: none;
+    }
+    ul {
+        list-style: none;
+        padding: 0 1em;
+        margin: 0;
+        li {
+            .zak-ng-treeli-cont {
+                display: flex;
+            }
+            .toggle-cont {
+                width: 20px;
+                display: inline-block;
+                line-height: 1px;
+                font-weight: bold;
+                padding: 3px;
+                display: flex;
+            }
+            .title-cont {
+                display: flex;
+                /* justify-content: center; */
+                align-items: center;
+                //padding: 10px 0 0 0;
+            }
+            .node-title {
+                text-decoration: none;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+                &:active {
+                    color: rgb(150, 148, 148);
+                }
+            }
+            button {
+                color: #fff;
+                margin: 2px;
+                padding: 8px;
+                border-radius: 5px;
+                border: none;
+            }
+            .zak-ng-sort-cont {
+                display: inline-grid;
+                height: 30px;
+                margin: 7px 0px 0px 2px;
+                fa {
+                    padding: 4px;
+                    cursor: pointer;
+                }
+                fa:focus {
+                    color: #444;
+                }
+            }
+        }
+    }
+}
