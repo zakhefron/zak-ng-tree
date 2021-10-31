@@ -2,6 +2,12 @@
 
 Angular component to create & display tree
 
+
+<img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.png" width="500"/>
+
+<img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.gif" width="350"/>
+
+
 ## Getting started
 ## Install
 
@@ -29,7 +35,8 @@ imports: [
 <zak-ng-tree [items]="items" [options]="options" (onChange)="onChange($event)"></zak-ng-tree>
 ```
 ##### Input ######
-`[items]` => array of objects with `title` & `children` property 
+`[items]` => array of objects with `title` & `children` property
+
 `[options]` => object 
     {
     enableAddDelete: true,
