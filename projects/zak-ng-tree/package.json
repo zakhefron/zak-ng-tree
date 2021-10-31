@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "http://"
+        "url": "https://github.com/zakhefron/zak-ng-tree.git"
     },
     "author": {
         "name": "Ferozkhan",
@@ -30,6 +30,6 @@
     ],
     "license": "MIT",
     "bugs": {
-        "url": "https://"
+        "url": "https://github.com/zakhefron/zak-ng-tree/issues"
     }
 }
