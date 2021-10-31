@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 .zak-ng-tree-container {
     margin: 5px;
     .zak-ng-tree-btn {
@@ -20,12 +21,13 @@
                 display: flex;
             }
             .toggle-cont {
-                width: 20px;
-                display: inline-block;
+                width: 35px;
+                //display: inline-block;
                 line-height: 1px;
                 font-weight: bold;
-                padding: 3px;
+                padding: 3px 0;
                 display: flex;
+                //padding: 4px 0 0 0;
             }
             .title-cont {
                 display: flex;
@@ -46,7 +48,7 @@
             button {
                 color: #fff;
                 margin: 2px;
-                padding: 8px;
+                padding: 4px;
                 border-radius: 5px;
                 border: none;
             }

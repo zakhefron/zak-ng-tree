@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ZakNgTreeComponent } from './zak-ng-tree.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import { ZakNgTreeComponent } from './zak-ng-tree.component';
   imports: [
     CommonModule,
     FormsModule,
-    FontAwesomeModule,
+    MatIconModule
   ],
   exports: [
     ZakNgTreeComponent

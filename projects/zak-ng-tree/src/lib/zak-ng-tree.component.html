@@ -1,22 +1,17 @@
 <div class="zak-ng-tree-container">
     <button *ngIf="options.enableAddDelete" class="zak-ng-tree-btn" (click)="addNode()" title="Add">
-      <fa-icon [icon]="faPlus"></fa-icon>
+        <span class="material-icons">add</span>
   </button>
-
     <ng-template #recursionTemp let-items>
-
         <ul class="zak-ng-treeul">
             <li *ngFor="let item of items; let i = index;" [ngClass]="{'toggle-hide' : item?.zakNgHide, 'toggle-show' : !item?.zakNgHide}">
                 <ng-container *ngIf="options.titleKey && item">
-
-
                     <div class="zak-ng-treeli-cont">
-
                         <div [style.visibility]="!item?.children ? 'hidden' : 'visible'" class="toggle-cont">
                             <a href="javascript:void(0)" (click)="toggleNode(item)" title="Toggle">
-                                <fa-icon *ngIf="item?.zakNgHide" [icon]="faCaretDown" size="2x"></fa-icon>
+                                <span *ngIf="item?.zakNgHide" class="material-icons" style="font-size: 40px">keyboard_arrow_down</span>
+                                <span *ngIf="!item?.zakNgHide" class="material-icons" style="font-size: 40px">chevron_right</span>
 
-                                <fa-icon *ngIf="!item?.zakNgHide" [icon]="faCaretRight" size="2x"></fa-icon>
                             </a>
                         </div>
                         <div class="title-cont">
@@ -26,43 +21,35 @@
                             </div>
                             <ng-template #editTemplate>
                                 <input type="text" #item.zakNgId [(ngModel)]="item[options.titleKey]" />
-                                <button class="zak-ng-treebtn" (click)="saveNode(items, item)" title="Add">
-                                  <fa-icon [icon]="faCheck"></fa-icon>
+                                <button class="zak-ng-tree-btn" (click)="saveNode(items, item)" title="Save">
+                                    <span class="material-icons">done</span>
                               </button>
                             </ng-template>
                             <ng-template #nonEditTemplate>
                                 <span class="node-title" (click)="selectNodeTitle(item)">{{item[options.titleKey]}}</span>
-                                <button *ngIf="options.enableAddDelete" class="zak-ng-treebtn" (click)="editNode(items, item)" title="Edit">
-                                  <fa-icon [icon]="faPencilAlt"></fa-icon>
+                                <button *ngIf="options.enableAddDelete" class="zak-ng-tree-btn" (click)="editNode(items, item)" title="Edit">
+                                   <span class="material-icons">edit</span>
                               </button>
-                                <button *ngIf="options.enableAddDelete" class="zak-ng-treebtn" (click)="addNode(items, item)" title="Add">
-                                  <fa-icon [icon]="faPlus"></fa-icon>
+                                <button *ngIf="options.enableAddDelete" class="zak-ng-tree-btn" (click)="addNode(items, item)" title="Add">
+                                    <span class="material-icons">add</span>
                               </button>
                             </ng-template>
 
                             <ng-container *ngIf="options.enableAddDelete">
-                                <button class="zak-ng-treebtn" (click)="deleteNode(items, item)" title="Remove">
-                                  <fa-icon [icon]="faTrash"></fa-icon>
+                                <button class="zak-ng-tree-btn" (click)="deleteNode(items, item)" title="Remove">
+                                    <span class="material-icons">delete</span>
                               </button>
                             </ng-container>
 
                             <ng-container *ngIf="options.enableMove">
-                                <button *ngIf="i!=0" class="zak-ng-treebtn" (click)="moveNodeUp(items, item)" title="Move Up">
-                                  <fa-icon [icon]="faArrowUp"></fa-icon>
+                                <button *ngIf="i!=0" class="zak-ng-tree-btn" (click)="moveNodeUp(items, item)" title="Move Up">
+                                    <span class="material-icons">arrow_upward</span>
                               </button>
-                                <button *ngIf="(items.length - 1) != i" class="zak-ng-treebtn" (click)="moveNodeDown(items, item)" title="Move Down">
-                                  <fa-icon [icon]="faArrowDown"></fa-icon>
+                                <button *ngIf="(items.length - 1) != i" class="zak-ng-tree-btn" (click)="moveNodeDown(items, item)" title="Move Down">
+                                    <span class="material-icons">arrow_downward</span>
                               </button>
                             </ng-container>
-
-
-
                         </div>
-
-
-
-
-
                     </div>
                 </ng-container>
 
@@ -73,8 +60,5 @@
             </li>
         </ul>
     </ng-template>
-
     <ng-container *ngTemplateOutlet="recursionTemp; context: { $implicit: items }"></ng-container>
-
-
 </div>
