@@ -8,6 +8,10 @@ Angular component to create & display tree
 <img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.gif" width="350"/>
 
 
+[Demo](https://angular-ivy-anwpnr.stackblitz.io/)
+[StackBlitz](https://stackblitz.com/edit/angular-ivy-anwpnr?file=src%2Fapp%2Fapp.component.html)
+
+
 ## Getting started
 ## Install
 
