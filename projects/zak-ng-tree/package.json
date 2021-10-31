@@ -1,6 +1,6 @@
 {
     "name": "@zakhefron/zak-ng-tree",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "peerDependencies": {
         "@angular/common": "^12.2.0",
         "@angular/core": "^12.2.0",
