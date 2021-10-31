@@ -2,8 +2,9 @@
 
 Angular component to create & display tree
 
-![Zak Ng Tree Preview](https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.png)
-![Zak Ng Tree Preview](https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.gif)
+
+[<img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.png" width="250"/>]
+[<img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.gif" width="250"/>]
 
 
 ## Getting started
