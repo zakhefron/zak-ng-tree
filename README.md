@@ -107,7 +107,7 @@ export class AppComponent {
         defaultNodeName: 'Test'
    };
 
-  listItem = [
+  items = [
     {
       title: "Parent 1",
       children : [
@@ -132,7 +132,7 @@ export class AppComponent {
     }
   ]
 
-  onChangeNode(event:{}){
+  onChange(event:{}){
     console.log("Event",event)
   }
 }
