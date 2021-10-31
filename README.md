@@ -29,7 +29,8 @@ imports: [
 <zak-ng-tree [items]="items" [options]="options" (onChange)="onChange($event)"></zak-ng-tree>
 ```
 ##### Input ######
-`[items]` => array of objects with `title` & `children` property 
+`[items]` => array of objects with `title` & `children` property
+
 `[options]` => object 
     {
     enableAddDelete: true,
