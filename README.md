@@ -1,4 +1,4 @@
-# zak-ng-tree Angular Tree Component
+#  Angular Tree Component @zakhefron/zak-ng-tree
 
 Angular component to create & display tree
 
@@ -16,7 +16,7 @@ Angular component to create & display tree
 ## Install
 
 ```sh
-npm install zak-ng-tree
+npm install @zakhefron/zak-ng-tree
 ```
 
 ## Usage
