@@ -1,6 +1,6 @@
 #  Angular Tree Component @zakhefron/zak-ng-tree
 
-Angular component to create & display tree
+Angular component to create and display recursive dynamic tree
 
 
 <img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.png" width="500"/>
