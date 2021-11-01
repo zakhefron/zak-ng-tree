@@ -6,9 +6,9 @@ Angular component to create and display recursive tree
 
 [StackBlitz](https://stackblitz.com/edit/angular-ivy-anwpnr?file=src%2Fapp%2Fapp.component.html)
 
-<img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.png" width="400"/>
+<img src="https://raw.githubusercontent.com/zakhefron/zak-ng-tree/main/assets/demo.jpg" width="400"/>
 
-<img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.gif" width="350"/>
+<img src="https://raw.githubusercontent.com/zakhefron/zak-ng-tree/main/assets/demo.gif" width="350"/>
 
 
 
