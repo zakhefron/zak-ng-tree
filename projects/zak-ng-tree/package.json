@@ -1,6 +1,6 @@
 {
     "name": "@zakhefron/zak-ng-tree",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "peerDependencies": {
         "@angular/common": "^12.2.0",
         "@angular/core": "^12.2.0",
@@ -14,8 +14,9 @@
         "type": "git",
         "url": "https://github.com/zakhefron/zak-ng-tree.git"
     },
+    "description": "Angular component to create and display recursive tree",
     "author": {
-        "name": "Ferozkhan",
+        "name": "ferozkhan",
         "email": "zakhefron@gmail.com"
     },
     "keywords": [

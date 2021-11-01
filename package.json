@@ -1,6 +1,11 @@
 {
-    "name": "zak-ng-tree",
-    "version": "1.0.10",
+    "name": "@zakhefron/zak-ng-tree",
+    "version": "1.0.11",
+    "description": "Angular component to create and display recursive tree",
+    "author": {
+        "name": "ferozkhan",
+        "email": "zakhefron@gmail.com"
+    },
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
@@ -38,5 +43,29 @@
         "karma-jasmine-html-reporter": "~1.7.0",
         "ng-packagr": "^12.1.1",
         "typescript": "~4.3.5"
+    },
+    "keywords": [
+        "ng-tree",
+        "angular tree",
+        "angular tree component",
+        "angular tree library",
+        "angular tree lib",
+        "zak ng tree",
+        "ng tree",
+        "ng2 tree",
+        "Angular 2+",
+        "Angular 12",
+        "nested tree",
+        "nested",
+        "nested angular tree",
+        "recusrsion",
+        "recursive",
+        "recursive tree",
+        "recursive angular tree",
+        "dynamic node tree"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/zakhefron/zak-ng-tree/issues"
     }
 }
