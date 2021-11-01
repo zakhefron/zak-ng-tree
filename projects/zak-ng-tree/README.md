@@ -1,15 +1,15 @@
 #  Angular Tree Component @zakhefron/zak-ng-tree
 
-Angular component to create and display recursive dynamic tree
+Angular component to create and display recursive tree
 
+[Demo](https://angular-ivy-anwpnr.stackblitz.io/)
 
-<img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.png" width="500"/>
+[StackBlitz](https://stackblitz.com/edit/angular-ivy-anwpnr?file=src%2Fapp%2Fapp.component.html)
+
+<img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.png" width="400"/>
 
 <img src="https://github.com/zakhefron/zak-ng-tree/blob/main/projects/zak-ng-tree/src/assets/demo.gif" width="350"/>
 
-
-[Demo](https://angular-ivy-anwpnr.stackblitz.io/)
-[StackBlitz](https://stackblitz.com/edit/angular-ivy-anwpnr?file=src%2Fapp%2Fapp.component.html)
 
 
 ## Getting started
@@ -38,17 +38,50 @@ imports: [
 ```html
 <zak-ng-tree [items]="items" [options]="options" (onChange)="onChange($event)"></zak-ng-tree>
 ```
-##### Input ######
-`[items]` => array of objects with `title` & `children` property
-
-`[options]` => object 
+##### Inputs ######
+`[items]` array of objects 
+```
+[
     {
+      title: 'Parent 1',
+      children: [
+        {
+          title: 'Child 1',
+        },
+        {
+          title: 'Child 2',
+          children: [
+            {
+              title: 'Grandchild 1',
+            },
+            {
+              title: 'Grandchild 2',
+            },
+          ],
+        },
+        {
+          title: 'Child 3',
+        },
+      ],
+    },
+    {
+      title: 'Parent 2',
+    }
+]
+```
+
+`[options]`object 
+
+```
+{
     enableAddDelete: true,
-     enableMove: true,
-     showNodeId: true,
-     titleKey : 'title', 
-     defaultNodeName: 'Node'
-     }
+    enableMove: true,
+    showNodeId: true,
+    titleKey : 'title', 
+    defaultNodeName: 'Node'
+}
+```
+  
 | Property |  Type |  Description |
 | --- | ----------- | ----------- |
 | enableAddDelete | Boolean | To enable add, edit, delete nodes |
@@ -60,9 +93,9 @@ imports: [
 `onChange($event)` output emits object with three property (event, items, item)
 | Property |  Type |  Description |
 | --- | ----------- | ----------- |
-| event | string |selected / saved / movedUp / movedDown |
-| items | array of object |whole array of object |
-| item |  object|current item|
+| event | string | Name of the event (selected / saved / movedUp / movedDown) |
+| items | array of object | this is the output of inputted items  |
+| item |  object| current item (selected / saved / movedUp / movedDown item) |
 
 ## Sample Code
 ### app.module.ts
@@ -101,43 +134,47 @@ import { Component } from "@angular/core";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
-  
-    options = {
-        enableAddDelete: true,
-        enableMove: true,
-        showNodeId: true,
-        titleKey : 'title',
-        defaultNodeName: 'Test'
-   };
+export class AppComponent {  
 
-  items = [
+
+  public options = {
+    enableAddDelete: true,
+    enableMove: true,
+    showNodeId: true,
+    titleKey: 'title',
+    defaultNodeName: 'Test',
+  };
+
+  public items = [
     {
-      title: "Parent 1",
-      children : [
+      title: 'Parent 1',
+      children: [
         {
-          title: "Child 1"
-        },{
-          title: "Child 2",
+          title: 'Child 1',
+        },
+        {
+          title: 'Child 2',
           children: [
             {
-              title: "Grandchild 1"
-            },{
-              title: "Grandchild 2"
-            }
-          ]
-        },{
-          title: "Child 3"
-        }
-      ]
+              title: 'Grandchild 1',
+            },
+            {
+              title: 'Grandchild 2',
+            },
+          ],
+        },
+        {
+          title: 'Child 3',
+        },
+      ],
     },
     {
-      title: "Parent 2"
-    }
-  ]
+      title: 'Parent 2',
+    },
+  ];
 
-  onChange(event:{}){
-    console.log("Event",event)
+  onChange(event: {}) {
+    console.log('Event', event);
   }
 }
 ```
