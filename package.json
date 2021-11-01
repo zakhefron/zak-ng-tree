@@ -10,7 +10,7 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build zak-ng-tree",
-        "gver": "npm version patch && cd ../projects/zak-ng-tree && npm version patch",
+        "gver": "npm version patch && cd projects/zak-ng-tree && npm version patch",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
     },
