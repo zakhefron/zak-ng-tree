@@ -14,7 +14,7 @@
         "type": "git",
         "url": "https://github.com/zakhefron/zak-ng-tree.git"
     },
-    "description": "Angular component to create and display recursive tree",
+    "description": "Angular component to create and view recursive tree",
     "author": {
         "name": "ferozkhan",
         "email": "zakhefron@gmail.com"
