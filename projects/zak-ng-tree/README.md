@@ -82,20 +82,20 @@ imports: [
 }
 ```
   
-| Property |  Type |  Description |
-| --- | ----------- | ----------- |
-| enableAddDelete | Boolean | To enable add, edit, delete nodes |
-| enableMove | Boolean|To enable nodes to move up / down |
-| showNodeId |  Boolean | To show node id|
-| titleKey |  string  | Node title to display. Property of object inside Items Array. (Default: 'title')|
-| defaultNodeName |  string  | Default node name to display on creation |
+| Property        |  Type    |  Description                                                                    |
+| ----------------| -------- | ------------------------------------------------------------------------------- |
+| enableAddDelete | Boolean  | To enable add, edit, delete nodes                                               |
+| enableMove      | Boolean  | To enable nodes to move up / down                                               |
+| showNodeId      | Boolean  | To show node id                                                                 |
+| titleKey        | String   | Node title to display. Property of object inside Items Array. (Default: 'title')|
+| defaultNodeName | String   | Default node name to display on creation |
 ##### Output ######
 `onChange($event)` output emits object with three property (event, items, item)
-| Property |  Type |  Description |
-| --- | ----------- | ----------- |
-| event | string | Name of the event (selected / saved / movedUp / movedDown) |
-| items | array of object | this is the output of inputted items  |
-| item |  object| current item (selected / saved / movedUp / movedDown item) |
+| Property |  Type            |  Description                                               |
+| -------- | ---------------- | ---------------------------------------------------------- |
+| event    |  string          | Name of the event (selected / saved / movedUp / movedDown) |
+| items    |  array of object | this is the output of inputted items                       |
+| item     |  object          | current item (selected / saved / movedUp / movedDown item) |
 
 ## Sample Code
 ### app.module.ts
