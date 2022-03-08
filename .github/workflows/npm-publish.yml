@@ -30,8 +30,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: ls
-      - run: cd dist/zak-ng-tree
-      - run: npm publish --access public
+      - run: cd dist/zak-ng-tree && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
 
@@ -51,7 +50,6 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: ls
-      - run: cd dist/zak-ng-tree
-      - run: npm publish
+      - run: cd dist/zak-ng-tree && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_GITHUB_TOKEN}}
