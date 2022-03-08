@@ -17,6 +17,7 @@ jobs:
           node-version: 14
       - run: npm ci
       - run: npm run build
+      - run: cd dist/zak-ng-tree
 
   publish-npm:
     needs: build
