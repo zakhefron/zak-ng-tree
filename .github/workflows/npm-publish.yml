@@ -28,7 +28,9 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: cd dist
+      - run: npm run build
+      - run: ls
+      - run: cd dist/zak-ng-tree
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_NPM_TOKEN}}
@@ -47,7 +49,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@zakhefron'
       - run: npm ci
-      - run: cd dist
+      - run: npm run build
+      - run: ls
+      - run: cd dist/zak-ng-tree
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.PUBLISH_GITHUB_TOKEN}}
