@@ -16,7 +16,7 @@ Angular component to create and display recursive tree
 ## Install
 
 ```sh
-npm install @zakhefron/zak-ng-tree @angular/cdk @angular/material
+npm install @zakhefron/zak-ng-tree
 ```
 
 ## Usage

@@ -1,17 +1,46 @@
 <div class="zak-ng-tree-container">
     <button *ngIf="options.enableAddDelete" class="zak-ng-tree-btn" (click)="addNode()" title="Add">
-        <span class="material-icons">add</span>
-  </button>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 5C12.5523 5 13 5.44772 13 6V18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18V6C11 5.44772 11.4477 5 12 5Z"
+                fill="black" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5 12C5 11.4477 5.44772 11 6 11H18C18.5523 11 19 11.4477 19 12C19 12.5523 18.5523 13 18 13H6C5.44772 13 5 12.5523 5 12Z"
+                fill="black" />
+        </svg>
+    </button>
     <ng-template #recursionTemp let-items>
         <ul class="zak-ng-treeul">
-            <li *ngFor="let item of items; let i = index;" [ngClass]="{'toggle-hide' : item?.zakNgHide, 'toggle-show' : !item?.zakNgHide}">
+            <li *ngFor="let item of items; let i = index;"
+                [ngClass]="{'toggle-hide' : item?.zakNgHide, 'toggle-show' : !item?.zakNgHide}">
                 <ng-container *ngIf="options.titleKey && item">
                     <div class="zak-ng-treeli-cont">
                         <div [style.visibility]="!item?.children ? 'hidden' : 'visible'" class="toggle-cont">
                             <a href="javascript:void(0)" (click)="toggleNode(item)" title="Toggle">
-                                <span *ngIf="item?.zakNgHide" class="material-icons" style="font-size: 40px">keyboard_arrow_down</span>
-                                <span *ngIf="!item?.zakNgHide" class="material-icons" style="font-size: 40px">chevron_right</span>
-
+                                <!-- <span *ngIf="item?.zakNgHide" class="material-icons" style="font-size: 40px">keyboard_arrow_down</span>
+                                <span *ngIf="!item?.zakNgHide" class="material-icons" style="font-size: 40px">chevron_right</span> -->
+                                <ng-container *ngIf="item?.zakNgHide">
+                                    <svg width="18px" height="18px" version="1.1" id="Layer_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" viewBox="0 0 122.88 66.91"
+                                        style="enable-background:new 0 0 122.88 66.91" xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M11.68,1.95C8.95-0.7,4.6-0.64,1.95,2.08c-2.65,2.72-2.59,7.08,0.13,9.73l54.79,53.13l4.8-4.93l-4.8,4.95 c2.74,2.65,7.1,2.58,9.75-0.15c0.08-0.08,0.15-0.16,0.22-0.24l53.95-52.76c2.73-2.65,2.79-7.01,0.14-9.73 c-2.65-2.72-7.01-2.79-9.73-0.13L61.65,50.41L11.68,1.95L11.68,1.95z" />
+                                        </g>
+                                    </svg>
+                                </ng-container>
+                                <ng-container *ngIf="!item?.zakNgHide">
+                                    <svg width="18px" height="18px" version="1.1" id="Layer_1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" viewBox="0 0 66.91 122.88"
+                                        style="enable-background:new 0 0 66.91 122.88" xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M1.95,111.2c-2.65,2.72-2.59,7.08,0.14,9.73c2.72,2.65,7.08,2.59,9.73-0.14L64.94,66l-4.93-4.79l4.95,4.8 c2.65-2.74,2.59-7.11-0.15-9.76c-0.08-0.08-0.16-0.15-0.24-0.22L11.81,2.09c-2.65-2.73-7-2.79-9.73-0.14 C-0.64,4.6-0.7,8.95,1.95,11.68l48.46,49.55L1.95,111.2L1.95,111.2L1.95,111.2z" />
+                                        </g>
+                                    </svg>
+                                </ng-container>
                             </a>
                         </div>
                         <div class="title-cont">
@@ -22,32 +51,83 @@
                             <ng-template #editTemplate>
                                 <input type="text" #item.zakNgId [(ngModel)]="item[options.titleKey]" />
                                 <button class="zak-ng-tree-btn" (click)="saveNode(items, item)" title="Save">
-                                    <span class="material-icons">done</span>
-                              </button>
+                                    <!-- <svg  width="25px" height="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.881 89.842" enable-background="new 0 0 122.881 89.842" xml:space="preserve"><g><path d="M1.232,55.541c-1.533-1.388-1.652-3.756-0.265-5.289c1.388-1.534,3.756-1.652,5.29-0.265l34.053,30.878l76.099-79.699 c1.429-1.501,3.804-1.561,5.305-0.132c1.502,1.428,1.561,3.803,0.133,5.305L43.223,88.683l-0.005-0.005 c-1.396,1.468-3.716,1.563-5.227,0.196L1.232,55.541L1.232,55.541z"/></g></svg> -->
+                                    <svg width="22px" height="22px" viewBox="0 0 16 16" version="1.1"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <rect width="16" height="16" id="icon-bound" fill="none" />
+                                        <path
+                                            d="M0,9.014L1.414,7.6L5.004,11.189L14.593,1.6L16.007,3.014L5.003,14.017L0,9.014Z" />
+                                    </svg>
+
+                                </button>
                             </ng-template>
                             <ng-template #nonEditTemplate>
-                                <span class="node-title" (click)="selectNodeTitle(item)">{{item[options.titleKey]}}</span>
-                                <button *ngIf="options.enableAddDelete" class="zak-ng-tree-btn" (click)="editNode(items, item)" title="Edit">
-                                   <span class="material-icons">edit</span>
-                              </button>
-                                <button *ngIf="options.enableAddDelete" class="zak-ng-tree-btn" (click)="addNode(items, item)" title="Add">
-                                    <span class="material-icons">add</span>
-                              </button>
+                                <span class="node-title"
+                                    (click)="selectNodeTitle(item)">{{item[options.titleKey]}}</span>
+                                <button *ngIf="options.enableAddDelete" class="zak-ng-tree-btn"
+                                    (click)="editNode(items, item)" title="Edit">
+                                    <svg width="22px" height="22px" viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.548,3.452a1.542,1.542,0,0,1,0,2.182L12.912,13.27,9.639,14.361l1.091-3.273,7.636-7.636A1.542,1.542,0,0,1,20.548,3.452ZM4,21H19a1,1,0,0,0,1-1V12a1,1,0,0,0-2,0v7H5V6h7a1,1,0,0,0,0-2H4A1,1,0,0,0,3,5V20A1,1,0,0,0,4,21Z" />
+                                    </svg>
+                                </button>
+                                <button *ngIf="options.enableAddDelete" class="zak-ng-tree-btn"
+                                    (click)="addNode(items, item)" title="Add">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 5C12.5523 5 13 5.44772 13 6V18C13 18.5523 12.5523 19 12 19C11.4477 19 11 18.5523 11 18V6C11 5.44772 11.4477 5 12 5Z"
+                                            fill="black" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M5 12C5 11.4477 5.44772 11 6 11H18C18.5523 11 19 11.4477 19 12C19 12.5523 18.5523 13 18 13H6C5.44772 13 5 12.5523 5 12Z"
+                                            fill="black" />
+                                    </svg>
+                                </button>
                             </ng-template>
 
-                            <ng-container *ngIf="options.enableAddDelete">
-                                <button class="zak-ng-tree-btn" (click)="deleteNode(items, item)" title="Remove">
-                                    <span class="material-icons">delete</span>
-                              </button>
-                            </ng-container>
+                     
 
                             <ng-container *ngIf="options.enableMove">
-                                <button *ngIf="i!=0" class="zak-ng-tree-btn" (click)="moveNodeUp(items, item)" title="Move Up">
-                                    <span class="material-icons">arrow_upward</span>
-                              </button>
-                                <button *ngIf="(items.length - 1) != i" class="zak-ng-tree-btn" (click)="moveNodeDown(items, item)" title="Move Down">
-                                    <span class="material-icons">arrow_downward</span>
-                              </button>
+                                <button *ngIf="i!=0" class="zak-ng-tree-btn" (click)="moveNodeUp(items, item)"
+                                    title="Move Up">
+
+
+                                    <svg version="1.1" width="18px" height="18px" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 0 1792 1792" style="enable-background:new 0 0 1792 1792;"
+                                        xml:space="preserve">
+                                        <path d="M808.7,259.9c23.2-23.6,55.6-35.9,88.6-33.6c31.9-2.4,63,10,84.6,33.6l548.3,546.3c45.4,45.4,45.4,119,0,164.4
+	c-45.4,45.4-119,45.4-164.4,0l-354.4-354.4v833.6c0.4,63.8-51,115.8-114.8,116.1c-0.2,0-0.4,0-0.7,0c-64-0.4-115.8-52.1-116.1-116.1
+	V616.3L426.2,970.6c-45.4,45.4-119,45.4-164.4,0c-45.4-45.4-45.4-119,0-164.4l0,0L808.7,259.9z" />
+                                    </svg>
+
+                                </button>
+                                <button *ngIf="(items.length - 1) != i" class="zak-ng-tree-btn"
+                                    (click)="moveNodeDown(items, item)" title="Move Down">
+
+
+                                    <svg version="1.1" width="19px" height="19px" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 0 1792 1792" style="enable-background:new 0 0 1792 1792;"
+                                        xml:space="preserve">
+                                        <path d="M983.3,1532.1c-23.2,23.6-55.6,35.9-88.6,33.6c-31.9,2.4-63-10-84.6-33.6L261.8,985.8c-45.4-45.4-45.4-119,0-164.4
+	s119-45.4,164.4,0l354.4,354.4V342.1c-0.4-63.8,51-115.8,114.8-116.1c0.2,0,0.4,0,0.7,0c64,0.4,115.8,52.1,116.1,116.1v833.6
+	l353.7-354.4c45.4-45.4,119-45.4,164.4,0c45.4,45.4,45.4,119,0,164.4l0,0L983.3,1532.1z" />
+                                    </svg>
+
+                                </button>
+                            </ng-container>
+                            <ng-container *ngIf="options.enableAddDelete">
+                                <button class="zak-ng-tree-btn" (click)="deleteNode(items, item)" title="Remove">
+                                    <svg width="22px" height="22px" viewBox="0 0 24 24" role="img"
+                                        xmlns="http://www.w3.org/2000/svg" aria-labelledby="binIconTitle"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        fill="none" color="#000000">
+                                        <title id="binIconTitle">Delete</title>
+                                        <path
+                                            d="M19 6L5 6M14 5L10 5M6 10L6 20C6 20.6666667 6.33333333 21 7 21 7.66666667 21 11 21 17 21 17.6666667 21 18 20.6666667 18 20 18 19.3333333 18 16 18 10" />
+                                    </svg>
+                                </button>
                             </ng-container>
                         </div>
                     </div>
