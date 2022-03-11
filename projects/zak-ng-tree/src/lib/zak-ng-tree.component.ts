@@ -90,18 +90,23 @@ export class ZakNgTreeComponent implements OnInit {
   }
 
   deleteNode(items: ItemsType, item: ItemType) {
-    const arrIn = items.findIndex((i: any) => item.zakNgId == i.zakNgId);
-    if (arrIn != -1) {
-      items?.splice(arrIn, 1);
-    }
-    this.searchNode(this.items)
+    // let text = "Are you sure you want to delete this?";
+    // if (confirm(text) == true) {
+      const arrIn = items.findIndex((i: any) => item.zakNgId == i.zakNgId);
+      if (arrIn != -1) {
+        items?.splice(arrIn, 1);
+      }
+      this.searchNode(this.items)
+  
+      const outData = {
+        event: 'deleted',
+        items: this.formattedItems(this.items),
+        item: this.formattedItems([item])[0]
+      }
+      this.onChange.emit(outData);
+    //}
 
-    const outData = {
-      event: 'deleted',
-      items: this.formattedItems(this.items),
-      item: this.formattedItems([item])[0]
-    }
-    this.onChange.emit(outData);
+
   }
 
   toggleNode(item: ItemType) {

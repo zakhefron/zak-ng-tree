@@ -1,14 +1,34 @@
-@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 .zak-ng-tree-container {
     margin: 5px;
     .zak-ng-tree-btn {
         cursor: pointer;
         color: #fff;
         margin: 2px;
-        padding: 8px;
+        padding: 2px;
         border-radius: 5px;
         border: none;
+        background-color: transparent;
+        &:hover {
+            cursor: pointer;
+            box-shadow: inset 0 0 35px 0px rgba(0, 0, 0, 0.15), inset 0 2px 1px 1px rgba(255, 255, 255, 0),
+                1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+            text-shadow: 3px -3px 5px rgba(143, 162, 199, 1), -3px 3px 5px rgba(192, 151, 178, 1);
+            -webkit-transition: box-shadow 0.4s, text-shadow 0.5s;
+            -moz-transition: box-shadow 0.4s, text-shadow 0.5s;
+            transition: box-shadow 0.4s, text-shadow 0.5s;
+        }
+        &:active {
+            background: linear-gradient(30deg, rgba(210, 178, 212, 1) 0%, rgba(177, 183, 223, 1) 100%);
+            color: rgba(192, 181, 218, 1);
+            box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.15), 1px 1px 15px 2px rgba(154, 137, 164, 0.1);
+            text-shadow: 1px -1px 1px rgba(143, 162, 199, 0.75), -1px 1px 1px rgba(192, 151, 178, 0.75);
+            -webkit-transition: background 0.3s color 0.2s, text-shadow 0.3s box-shadow 0.3s;
+            -moz-transition: background 0.3s color 0.2s, text-shadow 0.3s box-shadow 0.3s;
+            transition: background 0.3s color 0.2s, text-shadow 0.3s box-shadow 0.3s;
+        }
     }
+
     .toggle-hide ul {
         display: none;
     }
@@ -21,11 +41,11 @@
                 display: flex;
             }
             .toggle-cont {
-                width: 35px;
+                width: 15px;
                 //display: inline-block;
                 line-height: 1px;
                 font-weight: bold;
-                padding: 3px 0;
+                padding: 10px 0;
                 display: flex;
                 //padding: 4px 0 0 0;
             }
@@ -34,6 +54,9 @@
                 /* justify-content: center; */
                 align-items: center;
                 //padding: 10px 0 0 0;
+                .node-id {
+                    padding: 0 4px 0 0;
+                }
             }
             .node-title {
                 text-decoration: none;
@@ -47,8 +70,8 @@
             }
             button {
                 color: #fff;
-                margin: 2px;
-                padding: 4px;
+                margin: 1px;
+                padding: 1px;
                 border-radius: 5px;
                 border: none;
             }
