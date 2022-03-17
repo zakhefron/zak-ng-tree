@@ -1,9 +1,10 @@
 {
     "name": "@zakhefron/zak-ng-tree",
-    "version": "2.0.15",
+    "version": "2.0.16",
     "peerDependencies": {
         "@angular/common": "^12.2.0",
-        "@angular/core": "^12.2.0"
+        "@angular/core": "^12.2.0",
+        "@angular/form": "^12.2.0"
     },
     "dependencies": {
         "tslib": "^2.3.0"
